@@ -4,8 +4,7 @@ Store and manage all task-related documents and notes
 - [Geek出厂设置——GitHub入门与Markdown学习](https://github.com/Ce0531/Tasks/blob/main/%E9%98%B6%E6%AE%B5%E4%B8%80%E5%86%85%E5%AE%B9.md)
 ---  
 # :star:GitHub学习笔记  
-1. 标题和列表之类的一定记得带空格
-2. 换行记得在文末打两个空格
+[笔记](https://github.com/Ce0531/Tasks/blob/main/GitHub%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 ---  
 # ✨Markdown学习笔记  
 ### 1. 标题分级    
