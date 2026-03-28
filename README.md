@@ -1,6 +1,6 @@
 # Tasks
 Store and manage all task-related documents and notes
-# 1⃣️阶段一内容  
+# 1️⃣阶段一内容  
 - [Geek出厂设置——GitHub入门与Markdown学习](https://github.com/Ce0531/Tasks/blob/main/%E9%98%B6%E6%AE%B5%E4%B8%80%E5%86%85%E5%AE%B9.md)
 ---  
 # :star:GitHub学习笔记  
