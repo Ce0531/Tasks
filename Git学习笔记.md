@@ -36,7 +36,7 @@
      保留代码，撤销提交：git reset --soft HEAD^   
      丢弃代码，彻底撤销：git reset --hard HEAD^  
    - **已经推送**  
-     git revert <commit - hash>  
+     git revert  
      git push origin main  
 ## 2.冲突解决[^1]
    [^1]:黑历史：由于花了太长时间解决Bash上传时的冲突，觉得时间成本太高，于是把Git卸载了，重新下载再从头开始，效率快多了（os:下次不会了）  
