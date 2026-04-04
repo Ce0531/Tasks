@@ -285,7 +285,7 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
    - 若 option 未设置 value 属性，提交的是 option 标签中间的文本内容
    - 若设置 value，提交的是 value 的属性值
 3. 表单通用属性
- - 禁用属性：disabled
+ - 禁用属性：disabled  
  - 适用标签：input、textarea、button、select、option
  - 作用：禁用表单控件，禁用后控件无法点击、无法提交  
 4. 表单辅助标签  
@@ -304,11 +304,11 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 ```
  - 文件上传标签
    - 语法：`<input type="file" name="file">`
-5. 框架标签：iframe
+1. 框架标签：iframe
  - 语法：`<iframe src="嵌入页面路径" border="0"></iframe>`
  - border 属性：设置框架边框，值为 0 则无边框
  - 作用：在当前页面中嵌入另一个页面（如广告、其他网页内容）
-6. 超链接 & 表单通用属性  
+2. 超链接 & 表单通用属性  
  - target 属性：均可通过 target 控制页面 / 文件的打开方式  
 ## 12.HTML 字符实体
  - 空格：`&nbsp;`
@@ -332,15 +332,15 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 ## 14.meta元信息   
 1. 配置字符编码
 `<meta charset="utf-8">`
-2. 针对 IE 浏览器的兼容性配置
+1. 针对 IE 浏览器的兼容性配置
 `<meta http-equiv="X-UA-Compatible" content="IE=edge">`
-3. 针对移动端的配置（移动端课程中会详细讲解）
+1. 针对移动端的配置（移动端课程中会详细讲解）
 `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-4. 配置网页关键字
+1. 配置网页关键字
 `<meta name="keywords" content="8-12个以英文逗号分隔的单词/词语">`
-5. 配置网页描述信息
+1. 配置网页描述信息
 `<meta name="description" content="80字以内的一段话，与网站内容相关">`
-6. 针对搜索引擎爬虫配置
+1. 针对搜索引擎爬虫配置
 `<meta name="robots" content="此处可选值见下表">`
 配置值与描述对照表   
 
