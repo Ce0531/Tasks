@@ -12,7 +12,7 @@
  - 禁用属性示例： `<input disabled>`（disabled 为布尔属性，可直接写）  
  - 一个标签中不能出现重复属性，否则会失效,错误示例：`<input type="text" type="password">`   
 ## 4. HTML基本结构    
-```HTML
+```
 <html>
   <head>
     <!-- 头部信息，如编码、标题等 -->
@@ -37,7 +37,7 @@
  - 语法：`<html lang="zh-CN">`
  - 作用：定义当前页面的语言为中文，利于搜索引擎识别、浏览器解析和无障碍设备读取     
 ## 9. HTML 标准结构  
- ```HTML
+ ```
    <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -145,21 +145,21 @@ MDN 官方文档：developer.mozilla.org，是 HTML/CSS/JS 最权威的参考文
  - 发送短信：`<a href="sms:电话号码">短信联系</a>`  
 ## 9.列表  
 1. 有序列表
-```HTML
+```
 <ol>
   <li>内容1</li>
   <li>内容2</li>
 </ol>
 ```
 2. 无序列表
-```HTML
+```
 <ul>
   <li>内容1</li>
   <li>内容2</li>
 </ul>
 ```
 3. 嵌套列表
-```HTML
+```
 <ul>
   <li>主分类1
     <ul>
@@ -194,7 +194,7 @@ MDN 官方文档：developer.mozilla.org，是 HTML/CSS/JS 最权威的参考文
  - `<th>`	表头单元格	
  - `<td>`	普通单元格  
 3. 基础语法  
-```HTML
+```
 <table>
   <caption>表格标题</caption>
   <thead>
@@ -276,7 +276,7 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
    - 注意：button 标签一般不要指定 name 属性  
  - 下拉框
    - 语法：
-```HTML
+```
 <select name="自定义名称">
   <option>选项1</option>
   <option value="option2">选项2</option>
@@ -295,7 +295,7 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
  - fieldset & legend
    - 作用：表单控件分组 + 分组标题
 语法：
-```HTML
+```
 <fieldset>
   <legend>用户信息</legend>
   <!-- 分组内的表单控件 -->
@@ -332,15 +332,15 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 ## 14.meta元信息   
 1. 配置字符编码
 `<meta charset="utf-8">`
-1. 针对 IE 浏览器的兼容性配置
+2. 针对 IE 浏览器的兼容性配置
 `<meta http-equiv="X-UA-Compatible" content="IE=edge">`
-1. 针对移动端的配置（移动端课程中会详细讲解）
+3. 针对移动端的配置（移动端课程中会详细讲解）
 `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-1. 配置网页关键字
+4. 配置网页关键字
 `<meta name="keywords" content="8-12个以英文逗号分隔的单词/词语">`
-1. 配置网页描述信息
+5. 配置网页描述信息
 `<meta name="description" content="80字以内的一段话，与网站内容相关">`
-1. 针对搜索引擎爬虫配置
+6. 针对搜索引擎爬虫配置
 `<meta name="robots" content="此处可选值见下表">`
 配置值与描述对照表   
 
@@ -353,13 +353,13 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 |all|等价于 `index,follow`，允许索引和跟随链接|
 |none|等价于 `noindex,nofollow`，禁止索引和跟随链接|
 |noarchive|禁止搜索引擎缓存页面快照|
-1. 配置网页作者
+7. 配置网页作者
 `<meta name="author" content="tony">`  
-1. 配置网页生成工具
+8. 配置网页生成工具
 `<meta name="generator" content="Visual Studio Code">`  
-1. 配置定义网页版权信息
+9. 配置定义网页版权信息
 `<meta name="copyright" content="2023-2027©版权所有">`
-1.    配置网页自动刷新
+10. 配置网页自动刷新
 `<meta http-equiv="refresh" content="10;url=http://www.baidu.com">`
 
 
