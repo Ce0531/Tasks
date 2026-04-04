@@ -12,8 +12,8 @@
  - 禁用属性示例： `<input disabled>`（disabled 为布尔属性，可直接写）  
  - 一个标签中不能出现重复属性，否则会失效,错误示例：`<input type="text" type="password">`   
 ## 4. HTML基本结构    
-```
-<html>HTML
+```HTML
+<html>
   <head>
     <!-- 头部信息，如编码、标题等 -->
   </head>
