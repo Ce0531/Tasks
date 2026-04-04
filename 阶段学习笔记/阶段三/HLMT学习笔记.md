@@ -344,16 +344,16 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 `<meta name="robots" content="此处可选值见下表">`
 配置值与描述对照表   
 
-| 值 | 描述 |  
-| --- | --- |   
-| index | 允许搜索引擎爬虫索引当前页面 |
-| noindex | 禁止搜索引擎爬虫索引当前页面 |
-| follow | 允许爬虫跟随页面中的链接继续抓取 |
-| nofollow | 禁止爬虫跟随页面中的链接继续抓取 |
-| all | 等价于 `index,follow`，允许索引和跟随链接 |
-| none | 等价于 `noindex,nofollow`，禁止索引和跟随链接 |
-| noarchive | 禁止搜索引擎缓存页面快照 |
-| nocache | noarchive 的替代名称 |
+|值|描述|  
+|---|---|   
+|index|允许搜索引擎爬虫索引当前页面|
+|noindex|禁止搜索引擎爬虫索引当前页面|
+|follow|允许爬虫跟随页面中的链接继续抓取|
+|nofollow|禁止爬虫跟随页面中的链接继续抓取|
+|all|等价于 `index,follow`，允许索引和跟随链接|
+|none|等价于 `noindex,nofollow`，禁止索引和跟随链接|
+|noarchive|禁止搜索引擎缓存页面快照|
+|nocache|noarchive的替代名称|
 7. 配置网页作者
 `<meta name="author" content="tony">`  
 8. 配置网页生成工具
