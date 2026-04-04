@@ -353,14 +353,13 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
 |all|等价于 `index,follow`，允许索引和跟随链接|
 |none|等价于 `noindex,nofollow`，禁止索引和跟随链接|
 |noarchive|禁止搜索引擎缓存页面快照|
-|nocache|noarchive的替代名称|
-7. 配置网页作者
+1. 配置网页作者
 `<meta name="author" content="tony">`  
-8. 配置网页生成工具
+1. 配置网页生成工具
 `<meta name="generator" content="Visual Studio Code">`  
-9. 配置定义网页版权信息
+1. 配置定义网页版权信息
 `<meta name="copyright" content="2023-2027©版权所有">`
-10.   配置网页自动刷新
+1.    配置网页自动刷新
 `<meta http-equiv="refresh" content="10;url=http://www.baidu.com">`
 
 
