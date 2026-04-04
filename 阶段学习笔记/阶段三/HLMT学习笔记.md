@@ -13,7 +13,7 @@
  - 一个标签中不能出现重复属性，否则会失效,错误示例：`<input type="text" type="password">`   
 ## 4. HTML基本结构    
 ```
-<html>
+<html>HTML
   <head>
     <!-- 头部信息，如编码、标题等 -->
   </head>
@@ -37,7 +37,7 @@
  - 语法：`<html lang="zh-CN">`
  - 作用：定义当前页面的语言为中文，利于搜索引擎识别、浏览器解析和无障碍设备读取     
 ## 9. HTML 标准结构  
- ```
+ ```HTML
    <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -145,21 +145,21 @@ MDN 官方文档：developer.mozilla.org，是 HTML/CSS/JS 最权威的参考文
  - 发送短信：`<a href="sms:电话号码">短信联系</a>`  
 ## 9.列表  
 1. 有序列表
-```
+```HTML
 <ol>
   <li>内容1</li>
   <li>内容2</li>
 </ol>
 ```
 2. 无序列表
-```
+```HTML
 <ul>
   <li>内容1</li>
   <li>内容2</li>
 </ul>
 ```
 3. 嵌套列表
-```
+```HTML
 <ul>
   <li>主分类1
     <ul>
@@ -194,7 +194,7 @@ MDN 官方文档：developer.mozilla.org，是 HTML/CSS/JS 最权威的参考文
  - `<th>`	表头单元格	
  - `<td>`	普通单元格  
 3. 基础语法  
-```
+```HTML
 <table>
   <caption>表格标题</caption>
   <thead>
@@ -276,7 +276,7 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
    - 注意：button 标签一般不要指定 name 属性  
  - 下拉框
    - 语法：
-```
+```HTML
 <select name="自定义名称">
   <option>选项1</option>
   <option value="option2">选项2</option>
@@ -295,7 +295,7 @@ height：设置表格最小高度，表格最终高度可能比设置的值大
  - fieldset & legend
    - 作用：表单控件分组 + 分组标题
 语法：
-```
+```HTML
 <fieldset>
   <legend>用户信息</legend>
   <!-- 分组内的表单控件 -->
