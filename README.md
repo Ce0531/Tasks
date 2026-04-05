@@ -2,14 +2,14 @@
 Store and manage all task-related documents and notes   
 ## 目录  
 ### 1. 📑学习笔记  
-   - 阶段一1️⃣  
+   - 1️⃣阶段一  
      [阶段一内容](阶段学习笔记/阶段一/阶段一内容.md)  
      [GitHub学习笔记](阶段学习笔记/阶段一/GitHub学习笔记.md)  
      [Markdown学习笔记](阶段学习笔记/阶段一/Markdown学习笔记.md ) 
-   - 阶段二2️⃣  
+   - 2️⃣阶段二  
      [Git学习笔记](阶段学习笔记/阶段二/Git学习笔记.md)  
      [Git提交练习文档](阶段学习笔记/阶段二/hello.md)  
-   - 阶段三3️⃣  
+   - 3️⃣阶段三  
      [HTML学习笔记](./阶段学习笔记/阶段三/HLMT学习笔记.md)  
      [CSS学习笔记](./阶段学习笔记/阶段三/CSS学习笔记.md)   
      [JavaScript学习笔记](./阶段学习笔记/阶段三/JavaScript学习笔记.md)   
