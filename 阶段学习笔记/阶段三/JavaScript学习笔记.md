@@ -131,7 +131,7 @@
    - ===：值和类型都相等（推荐）  
 4. 逻辑运算符  
    `&&`、`||`、`!`  
-   - 短路求值：  
+- 短路求值：  
   ```javascript  
   // &&：只要有一个false，结果为false
   console.log(true && false); // false
@@ -156,15 +156,15 @@
   console.log(b); // 20  
   ```  
 2. 条件语句
-   - if 语句  
-   - switch 语句(`break`用于跳出 switch，否则会继续执行下一个 case)  
+- if 语句  
+- switch 语句(`break`用于跳出 switch，否则会继续执行下一个 case)  
 3. 循环语句
-   - while 循环
-   - do...while 循环(特点：至少执行一次循环体)  
-   - for 循环  
-   - 跳转控制  
-       - **break**：跳出当前循环 /switch
-     - **continue**：跳过当前循环，继续下一次循环  
+- while 循环
+- do...while 循环(特点：至少执行一次循环体)  
+- for 循环  
+- 跳转控制  
+    - **break**：跳出当前循环 /switch
+    - **continue**：跳过当前循环，继续下一次循环  
   ```javascript  
   for (let i = 0; i < 10; i++) {
   if (i === 5) break; // 当i=5时跳出循环
