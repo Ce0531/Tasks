@@ -14,7 +14,10 @@ Store and manage all task-related documents and notes
      [CSS学习笔记](./阶段学习笔记/阶段三/CSS学习笔记.md)   
      [JavaScript学习笔记](./阶段学习笔记/阶段三/JavaScript学习笔记.md)  
      [静态网页作品]( https://ce0531.github.io/MyFirstWebPage/)  
-     [页面编后感](./阶段学习笔记/阶段三/页面编后感.md)   
+     [页面编后感](./阶段学习笔记/阶段三/页面编后感.md)    
+   - 4️⃣阶段四  
+     [复刻网页作品](https://ce0531.github.io/DuplicationGeek/)  
+     [页面编后感](./阶段学习笔记/阶段四/页面编后感.md) 
 ### 2. ❓问题记录与解决 
 - [问题记录](问题解决记录.md)         
 ### 3. 🐱仓库说明 
