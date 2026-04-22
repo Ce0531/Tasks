@@ -1,0 +1,669 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth; 
+}
+/* 导航栏一直是透明色，不论怎样都改不成白色，此段为AI提供，最后解决了该问题 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff !important;
+    z-index: -9999;
+}
+/* 给固定导航栏留出空间 */
+body {
+    padding: 75px 0; /* 导航栏高度 + 上间距 */
+    background-color: #f5f5f5;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+/* 感觉各部分没有区别，不美观，故加横线--------------- */
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    height: 60px; /* 导航栏高度 */
+    background-color: #ffb226; 
+    z-index: 9999; /* 保证在最上层 */
+    border-radius: 20px; /* 圆角 */
+}
+/* 导航列表布局 */
+.nav-list {
+    display:flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    height: 100%;
+    gap: 120px; 
+}
+/* 菜单项 */
+.nav-item {
+    position: relative; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px; /* 左右内边距 */
+    border-radius: 20px;
+}
+/* 导航文字 */
+.nav-link {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    white-space: nowrap; /* 强制文字不换行 */
+}
+.nav-icon {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+/* 鼠标悬停变色 */
+.nav-item:hover {
+    background-color:#ff9965;
+}
+/* 鼠标悬停时导航文字变色 */
+.nav-item:hover .nav-link {
+    color: #ccc;
+}
+/* ----------------------------------- */
+/* Introduction 下拉面板 */
+.dropdown-card {
+    display: none;
+    position: absolute;
+    top: 100%; /* 紧贴菜单下方 */
+    left: 0;
+    background-color: #ffffff;
+    border: 4px solid #ffb226;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 9998;
+    min-width: 250px; 
+    max-width: 300px; /* 限制最大宽度 */
+    text-align: center;
+    border-radius: 10px;
+}
+/* 下拉二维码图片，应该可以用气泡实现？但是关于这部分我没掌握好 */
+.dropdown-qrcode {
+    width: 200px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 居中 */
+}
+/* 下拉面板底部文字 */
+.dropdown-footer {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 5px;
+}
+/* 鼠标悬停显示 */
+.dropdown:hover .dropdown-card {
+    display: block;
+}
+/* --------------------------------- */
+/* 主容器样式 */
+.main-container {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-color: #ffffff;
+}
+/* 首页主图样式 */
+.main-img {
+    width: 1690px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 居中 */
+}
+/* 首页装饰图样式 */
+.geek-decoration {
+    position: absolute;
+    top: 23%; 
+    right: 20%; 
+    transform: translate(-50%,-50%);
+    max-width: 30%; 
+    height: auto;
+    z-index: 10;
+    transition: transform 0.6s ease; 
+    cursor: pointer; 
+}
+.geek-decoration:hover {
+    transform: translate(-50%,-50%) scale(1.4); 
+}
+/* --------------------------------------- */
+/* 介绍容器样式 */
+.introduction-container {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+/* 介绍标题样式 */
+.introduction {
+    font-size: 50px;
+    font-weight: bold;
+    color: #00008b;
+    align-items: center;
+    margin: 20px 0 0 0;
+    line-height: 1;
+}
+/* 介绍背景样式 */
+.introduction-img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin: -120px auto 30px; /* 上下间距，居中 */
+}
+/* 介绍卡片样式 */
+.section-card {
+    width: 100%;
+    max-width: 1300px;
+    margin: 30px auto 60px; /* 居中并增加底部间距 */
+    padding: 60px 60px 25px; /* 内边距，增加顶部和底部间距 */
+    border: 5px solid #e0e0e0;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 80px; /* 卡片内容间距 */
+}
+.card-content {
+    flex: 1; /* 内容区域占满剩余空间 */
+    text-align: left;
+}
+/* 卡片标题样式 */
+.card-content h3 {
+    font-size: 45px;
+    color: #222;
+    margin: 0 0 35px 0;
+    font-weight: bold;
+}
+/* 卡片1口号样式 */
+.card-content h4 {
+    font-size: 35px;
+    color: #6495ed;
+    margin: 0 0 35px 0;
+    font-style: italic;
+}
+/* 卡片段落样式 */
+.card-content p {
+    font-size: 23px;
+    color: #333333;
+    line-height: 1.7;
+    margin: 0 0 18px 0;
+    font-style: normal;
+}
+/* 卡片图片样式 */
+.card-img {
+    width: 350px; 
+    height: auto; 
+    flex-shrink: 0; /* 防止图片缩小 */
+}
+/* 卡片悬停样式 */
+.section-card {
+    transition: transform 0.5s ease; 
+}
+/* 鼠标悬停时向上移动 */
+.section-card:hover {
+    transform: scale(1.1); 
+}
+/* 卡片图片悬停样式 */
+.card-img {
+    transition: transform 0.5s ease; 
+}
+/* 鼠标悬停时图片旋转 */
+.card-img:hover {
+    transform: scale(1.1) rotate(-6deg); /* 鼠标悬停时放大 */
+}
+/* 产品经理口号样式 */
+.pm-slogan {
+    color: #ee82ee!important;
+}
+/* 产品经理卡片样式 */
+.pm-card {
+    flex-direction: row;
+}
+/* 游戏开发样式 */
+.game-slogan {
+    color: #40e0d0!important;
+}
+.game-card {
+    flex-direction: row;
+}
+/* 安全样式 */
+.security-slogan {
+    color: #f87171!important;
+}
+.security-card {
+    flex-direction: row;
+}
+/* ------------------------------------------------------- */
+/* About Us板块样式 */
+.about-container {
+    width: 90%;
+    max-width: 1500px;
+    height: 100%;
+    margin: 10px auto 80px; 
+    padding: 50px 200px 190px 200px; 
+    text-align: center;
+    background-color: #fffdf5;
+    border: 9px solid #b0b0b0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: visible;/* 允许装饰图超出容器 */
+}
+/* About Us四角装饰样式 */
+.about-decoration {
+    position: absolute;
+    width: 270px; 
+    height: auto; 
+    z-index: 1;
+    border-width: 5px;
+}
+/* 调整四角装饰角度 */
+.about-decoration.top-right {
+    top: -25px;
+    right: -25px;
+    transform: rotate(0);
+}
+.about-decoration.top-left {
+    top: -25px;
+    left: -25px;
+    transform: scaleX(-1);
+}
+.about-decoration.bottom-right {
+    bottom: -25px;
+    right: -25px;
+    transform: scaleY(-1);
+}
+.about-decoration.bottom-left {
+    bottom: -25px;
+    left: -25px;
+    transform: scale(-1);
+}
+/* About Us标题样式 */
+.about-title {
+    font-size: 44px;
+    color: #666666;
+    margin: 0 0 60px 0;
+    font-weight: bold;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+/* 小卡片总样式 */
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 130px; /* 卡片间距 */
+    z-index: 2;
+    flex-wrap: wrap;
+    position: relative;
+}
+/* 小卡片样式 */
+.about-card {
+    width: 215px;
+    height: 420px;
+    padding: 30px 22px;
+    background-color: #ffffff;
+    border: 7px solid #800080;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.4s ease; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+/* 鼠标悬停时向上移动 */
+.about-card:hover {
+    transform: scale(1.1); 
+}
+/* 卡片图片样式 */
+.about-img {
+    width: 100px; 
+    height: auto; 
+    object-fit: cover; /* 保持图片比例 */
+    margin-bottom: 30px;
+    transition: transform 0.4s ease; 
+}
+/* 卡片图片悬停样式 */
+.about-img:hover {
+    transform: scale(1.1); 
+}
+/* 卡片标签样式 */
+.card-label {
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+/* 卡片文本样式 */
+.card-text {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.55;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+/* 右下角蝴蝶装饰加气泡 */
+.about-butterfly {
+    position: absolute;
+    bottom: 80px;
+    right: 150px;
+    width: 150px; 
+    height: auto;
+    z-index: 2;
+    transition: transform 0.4s ease; 
+    display: block;
+}
+.butterfly-wrapper {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    z-index: 999;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+.butterfly-wrapper:hover {
+    transform: scale(1.2); 
+}
+/* 蝴蝶气泡样式 */
+.butterfly-text {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 6px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+    margin-top: 4px;
+}
+/* 气泡离蝴蝶太远了，怎么改都没用，问AI加上了这段，仍无济于事 */
+.butterfly-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+.butterfly-wrapper:hover .butterfly-text {
+    opacity: 1;
+    visibility: visible;
+}
+/* ------------------------------------------------------- */
+/* Contact Us板块样式 */
+.contact-container {
+    width: 90%;
+    max-width: 1500px;/*与About Us保持一致*/
+    margin: 10px auto 80px;
+    padding: 50px 180px 100px 180px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 9px solid #008b8b;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: visible; 
+    z-index: 1;
+}
+/* 装饰图片统一禁止选中 */
+.contact-ladybug,
+.contact-chameleon,
+.contact-left-tree,
+.contact-right-tree,
+.contact-leaves {
+    position: absolute; 
+    z-index: 1;
+    user-select: none; 
+    pointer-events: none; 
+}
+/* 左侧树样式 */
+.contact-left-tree {
+    top: -30px;
+    left: 1px;
+    width: 320px; 
+    height: auto;
+    transform-origin: left top; /* 设置旋转中心为左上角 */
+}
+/* 右侧树样式 */
+.contact-right-tree {
+    top: 0;
+    right: -45px;
+    width: 200px; 
+    height: 800px;
+    transform-origin: right top; 
+}
+/* 变色龙样式 */
+.contact-chameleon {
+    bottom: -52px;
+    right: 180px;
+    width: 550px; 
+    height: auto;
+}
+/* 瓢虫样式 */
+.contact-ladybug {
+    bottom: -31px;
+    left: -20px;
+    width: 120px; 
+    height: auto;
+}
+/* 标题叶子样式 */
+.contact-leaves {
+    top: 40px;
+    left: 30%;
+    width: 80px; 
+    height: auto;
+}
+/* 文本内容部分 */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+/* 标题样式 */
+.contact-title {
+    font-size: 45px;
+    color: #2f4f4f;
+    margin: 0 0 40px 0;
+    font-weight: bold;
+}
+/* 要求列表样式 */
+.contact-require {
+    font-size: 28px;
+    color: #333333;
+    line-height: 2.7;
+    margin: 0 0 30px 0;
+    padding: 0 0 0 250px;
+    list-style: disc;
+    list-style-position: outside;
+    text-align: left;
+    max-width: 1000px;
+}
+/* 要求列表项样式 */
+.contact-require li {
+    margin: 10px 0;
+}
+/* ps文字样式 */
+.contact-ps {
+    font-size: 22px;
+    color: #666666;
+    line-height: 2;
+    margin: 0 auto 90px auto;
+    padding: 0 0 0 117px;
+    max-width: 850px;
+    text-align: left;
+}
+/* 按钮容器样式 */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+/* 按钮样式 */
+.contact-way {
+    display: inline-block;
+    padding: 12px 34px;
+    background-color: #228b22;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    text-decoration: none;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+/* 按钮悬停效果 */
+.contact-way:hover {
+    background-color: #006d00;
+    transform: scale(1.1);
+}
+/* ----------------------------------------------- */
+/* qa板块样式，为了点击问题下拉回答时不超过背景图，把背景改为背景图同色 */
+.qa-container {
+    width: 90%;
+    max-width: 1500px;
+    min-height: 900px;
+    margin: 10px auto 80px;
+    border: #6495ed solid 9px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #8dc6ff;
+}
+/* qa背景图样式 */
+.qa-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+}
+/* 文本内容样式 */
+.qa-content {
+    position: relative;
+    z-index: 2;
+    padding: 50px 100px 80px;
+    text-align: center;
+}
+/* qa标题样式 */
+.qa-title {
+    font-size: 44px;
+    color: #333333;
+    margin: 0 0 50px 0;
+    font-weight: bold;
+}
+.qa-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+.qa-item {
+    margin-bottom: 25px;
+}
+/* qa问题样式 */
+.qa-q {
+    font-size: 25px;
+    color: #333333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+    line-height: 1.9;
+}
+/* 问题部分动态效果 */
+.qa-q:hover {
+    color: #76869a;
+    transform: translateX(8px) scale(1.1);
+}
+/* 回答部分样式 */
+.qa-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease,padding 0.4s ease;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #374151;
+    line-height: 1.7;
+    box-sizing: border-box;
+}
+/* 结合js实现点击下拉 */
+.qa-item.active .qa-a {
+    max-height: 800px;
+    padding: 20px;
+}
+/* -------------------------------------------------------- */
+/* 最后的某些小东西样式 */
+/* 页脚样式 */
+.footer-box {
+    border-top: 2px solid #313234;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color:#333;
+    margin-top: 40px;
+}
+.footer-tip {
+    margin:8px 0;
+}
+/* 回到顶部按钮样式 */
+.go-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: #111827 5px solid;
+    line-height: 50px;
+    text-align: center;
+    background-color: #d7dadf;
+    color: #333;
+    border-radius: 10px;
+    font-size: 22px;
+    text-decoration: none;
+    z-index: 999;
+    transition: 0.6s;
+}
+/* 回到顶部按钮动态效果 */
+.go-top:hover {
+    background: #616163;
+    transform: scale(1.1)
+}
