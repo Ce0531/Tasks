@@ -12,13 +12,11 @@
             box-sizing: border-box;
             scroll-behavior: smooth; /* 页面平滑滚动 */
         }
-
         /* 页面整体背景（浅粉色） */
         body {
             background-color: rgba(255, 192, 203, 0.5);
             font-family: "Microsoft YaHei", sans-serif;
         }
-
         /* 导航栏：固定在顶部 */
         .navbar {
             position: fixed;
@@ -34,7 +32,6 @@
             z-index: 999;
             transition: all 0.3s ease;
         }
-
         /* 导航里的每个按钮 */
         .nav-item {
             color: white;
@@ -46,14 +43,12 @@
             border-radius: 10px;
             transition: all 0.25s ease;
         }
-
         /* 鼠标放上去效果 */
         .nav-item:hover {
             color: #fff;
             background: rgba(255, 143, 182, 0.4);
             transform: translateY(-2px);
         }
-
         /* 视频外层盒子：全屏 */
         .video-container {
             width: 100%;
@@ -61,7 +56,6 @@
             position: relative;
             overflow: hidden;
         }
-
         /* 视频样式：铺满全屏 */
         video {
             width: 100%;
@@ -71,7 +65,6 @@
             top: 0;
             left: 0;
         }
-
         /* 视频中间文字：你好 友人A */
         .video-word {
             position: absolute;
@@ -84,13 +77,6 @@
             letter-spacing: 3px;
             animation: fadeIn 1.2s ease;
         }
-
-        /* 文字淡入动画 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translate(-50%, -45%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
-        }
-
         /* 每个大板块通用样式 */
         .section {
             width: 100%;
@@ -104,7 +90,6 @@
             flex-direction: column;
             align-items: center;
         }
-
         /* 板块标题样式 */
         .section h2 {
             color: white;
@@ -115,11 +100,9 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-
         .section h2:hover {
             transform: scale(1.05);
         }
-
         /* 白色半透明文字框（毛玻璃） */
         .text-box {
             background: rgba(255,255,255,0.25);
@@ -135,17 +118,14 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255,255,255,0.3);
         }
-
         .text-box:hover {
             background: rgba(255,255,255,0.32);
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
         .text-box p {
             margin-bottom: 16px;
         }
-
         /* 角色卡片容器 */
         .char-wrapper {
             display: flex;
@@ -154,7 +134,6 @@
             justify-content: center;
             max-width: 1000px;
         }
-
         /* 角色卡片 */
         .char-box {
             width: 46%;
@@ -167,13 +146,11 @@
             display: flex;
             align-items: center;
         }
-
         .char-box:hover {
             transform: translateY(-6px);
             background: rgba(255,255,255,0.3);
             box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         }
-
         /* 角色图片 */
         .char-img {
             width: 130px;
@@ -183,11 +160,9 @@
             margin-right: 18px;
             transition: all 0.3s ease;
         }
-
         .char-box:hover .char-img {
             transform: scale(1.05);
         }
-
         /* 角色名字 */
         .char-box h3 {
             color: white;
@@ -195,7 +170,6 @@
             text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
             margin-bottom: 8px;
         }
-
         /* 角色介绍文字 */
         .char-box p {
             color: white;
