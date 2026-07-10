@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用Flex制作追番目录DEMO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 30px;
+      background: #f8f9fa;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* 父容器 */
+    .anime-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      
+    }
+
+    /* 动漫卡片 */
+    .card {
+      flex: 0 1 22%; /* 基准宽度22%，大屏一行4个 */
+      min-width: 220px; /* 最小宽度，小于则自动换行 */
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      /* 卡片内部垂直弹性布局 */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      background: #e9ecef;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1; /* 弹性占位 */
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .score {
+      color: #ff6b00;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .follow-btn {
+      margin: 0 16px 16px;
+      padding: 8px 0;
+      border: none;
+      background: #fb7299;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .follow-btn:hover {
+      background: #ff4d88;
+      transform: scale(1.03);
+    }   
+    .follow-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <h1>Ce追番目录</h1>
+
+  <div class="anime-wrap">
+    <div class="card">
+      <img alt="HOLIC">
+      <div class="card-info">
+        <div class="card-title">HOLIC</div>
+        <div class="score">★ 9.8 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+
+    <div class="card">
+      <img alt="孤独摇滚">
+      <div class="card-info">
+        <div class="card-title">孤独摇滚</div>
+        <div class="score">★ 9.9 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+
+    <div class="card">
+      <img alt="赛马娘">
+      <div class="card-info">
+        <div class="card-title">赛马娘</div>
+        <div class="score">★ 9.7 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+
+    <div class="card">
+      <img alt="齐木楠雄的灾难">
+      <div class="card-info">
+        <div class="card-title">齐木楠雄的灾难</div>
+        <div class="score">★ 9.7 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+
+    <div class="card">
+      <img alt="刀剑神域">
+      <div class="card-info">
+        <div class="card-title">刀剑神域</div>
+        <div class="score">★ 9.7 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+
+    <div class="card">
+      <img alt="超时空辉夜姬">
+      <div class="card-info">
+        <div class="card-title">超时空辉夜姬</div>
+        <div class="score">★ 9.8 分</div>
+      </div>
+      <button class="follow-btn">立即追番</button>
+    </div>
+  </div>
+</body>
+</html>
