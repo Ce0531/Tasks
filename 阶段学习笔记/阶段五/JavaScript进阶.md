@@ -385,4 +385,4 @@ async function getList() {
   }
 }
 ```
-> async / await 是 Promise 的语法糖，底层依然是 Promise，写起来和同步代码几乎一样，开发最常用。
+> async / await 是 Promise 的语法糖，底层依然是 Promise，写起来和同步代码几乎一样，开发最常用
