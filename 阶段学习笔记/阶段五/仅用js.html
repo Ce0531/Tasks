@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style>
+        body {
+            padding-top: 80px;
+            font-family: 微软雅黑;
+            text-align: center;
+        }
+        .box {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        /* 左右按钮样式 */
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: none;
+            background: #F8A9BC;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .left { left: 20px; }
+        .right { right: 20px; }
+        .page {
+            margin-top: 30px;
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>波奇酱照片轮播</h2>
+    <div class="box" id="box">
+        <img id="pic" src="images/1.jpg" alt="轮播图">
+        <button class="btn left" id="leftBtn"> < </button>
+        <button class="btn right" id="rightBtn"> > </button>
+    </div>
+    <div class="page" id="pageText">第 1 张 / 共 4 张</div>
+    <script>
+        //获取页面上所有元素 
+        var box = document.getElementById('box');
+        var pic = document.getElementById('pic');
+        var leftBtn = document.getElementById('leftBtn');
+        var rightBtn = document.getElementById('rightBtn');
+        var pageText = document.getElementById('pageText');
+        var imgList = [
+            'https://n.sinaimg.cn/sinakd20116/320/w960h960/20221114/a494-532c2e5659d41784f828ac4aac5508d4.jpg',
+            'https://ts1.tc.mm.bing.net/th/id/R-C.adadb20a338c618b6b0d79451bdd0516?rik=LBLpxdIWkAgifw&riu=http%3a%2f%2fwww.guangyuanol.cn%2fuploads%2fallimg%2f221212%2f2121244937-15.gif&ehk=nU5f%2fFUkE8Yht3ZR2VQvzKau4y75C7XmKmVH5EyevRo%3d&risl=&pid=ImgRaw&r=0',
+            'https://ts1.tc.mm.bing.net/th/id/R-C.a46a26e6a40db7ce7c37e72e132f59af?rik=BlI1Ub93uigoXA&riu=http%3a%2f%2fwww.guangyuanol.cn%2fuploads%2fallimg%2f221212%2f21212462O-2.gif&ehk=dvaIQEai3YoeRj8TbewEkltu2xIS01Sv0MzSUpmjxys%3d&risl=&pid=ImgRaw&r=0',
+            'https://ts1.tc.mm.bing.net/th/id/R-C.19b1c081c11e7c3c067f8de7c5652e59?rik=ZX1V7Z4ME9z3ow&riu=http%3a%2f%2fwww.guangyuanol.cn%2fuploads%2fallimg%2f221212%2f2121245419-24.gif&ehk=bkEnInU2k1AdTpYERMTkY7QfOloFN53LgbewP3H%2fz3E%3d&risl=&pid=ImgRaw&r=0'
+        ];
+        //基础变量
+        var currentIndex = 0; //当前显示第几张，从0开始
+        var timer = null;     //存定时器的变量
+        //封装切换图片的函数
+        function changeImg() {
+            // 修改图片的src地址
+            pic.src = imgList[currentIndex];
+            // 更新页码文字
+            pageText.innerText = '第 ' + (currentIndex + 1) + ' 张 / 共 ' + imgList.length + ' 张';
+        }
+        //下一张 
+        function nextImg() {
+            currentIndex++;
+            //最后一张，回到第一张
+            if (currentIndex > imgList.length - 1) {
+                currentIndex = 0;
+            }
+            changeImg();
+        }
+        //上一张
+        function prevImg() {
+            currentIndex--;
+            // 第一张，跳到最后一张
+            if (currentIndex < 0) {
+                currentIndex = imgList.length - 1;
+            }
+            changeImg();
+        }
+        //自动轮播功能
+        function startAutoPlay() {
+            //每3秒自动切下一张
+            timer = setInterval(nextImg, 3000);
+        }
+        function stopAutoPlay() {
+            //清除定时器，停止轮播
+            clearInterval(timer);
+        }
+        //绑定事件 
+        //点击按钮切图
+        rightBtn.onclick = nextImg;
+        leftBtn.onclick = prevImg;
+        //鼠标放上去暂停轮播，移开继续
+        box.onmouseover = stopAutoPlay;
+        box.onmouseout = startAutoPlay;
+        //页面打开就开始自动轮播 
+        startAutoPlay();
+    </script>
+</body>
+</html>

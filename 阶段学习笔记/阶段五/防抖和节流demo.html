@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖与节流domo</title>
+    <style>
+        body {
+            font-family: 微软雅黑;
+            padding: 40px;
+        }
+        .title {
+            color: #019898;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .tip {
+            color: #9fe4e4;
+            margin-bottom: 30px;
+        }
+        .box-wrap {
+            display: flex;
+            gap: 30px;
+        }
+        .item {
+            width: 280px;
+            height: 200px;
+            border: 2px solid #afd7d3;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: default;
+        }
+        .count {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 40px;
+            color: #4bcaca;
+        }
+        h3 {
+            margin: 0 0 10px 0;
+            color: #019898;
+        }
+        p {
+            margin: 0;
+            color: #9fe4e4;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">防抖和节流效果对比</h2>
+    <p class="tip">鼠标在下面三个盒子里来回移动，观察数字增长的区别</p>
+    <div class="box-wrap">
+        <!-- 正常触发 -->
+        <div class="item" id="normalBox">
+            <h3>正常触发</h3>
+            <p>鼠标一动就计数</p>
+            <div class="count" id="normalCount">0</div>
+        </div>
+        <!-- 防抖处理 -->
+        <div class="item" id="debounceBox">
+            <h3>防抖处理</h3>
+            <p>停下500ms才会计数</p>
+            <div class="count" id="debounceCount">0</div>
+        </div>
+        <!-- 节流处理 -->
+        <div class="item" id="throttleBox">
+            <h3>节流处理</h3>
+            <p>每500ms最多计数1次</p>
+            <div class="count" id="throttleCount">0</div>
+        </div>
+    </div>
+    <script>
+        //获取页面元素
+        var normalBox = document.getElementById('normalBox');
+        var normalCount = document.getElementById('normalCount');
+
+        var debounceBox = document.getElementById('debounceBox');
+        var debounceCount = document.getElementById('debounceCount');
+
+        var throttleBox = document.getElementById('throttleBox');
+        var throttleCount = document.getElementById('throttleCount');
+        //三个计数器 
+        var normalNum = 0;
+        var debounceNum = 0;
+        var throttleNum = 0;
+        //正常的处理函数 
+        function normalAdd() {
+            normalNum++;
+            normalCount.innerText = normalNum;
+        }
+        //防抖函数封装
+        //原理：事件触发后，延迟delay毫秒执行；如果期间再次触发，就重新计时
+        function debounce(fn, delay) {
+            var timer = null; //用闭包保存定时器变量
+            return function() {
+                //每次触发都清掉上一个定时器，重新开始等
+                clearTimeout(timer);
+                timer = setTimeout(fn, delay);
+            }
+        }
+        //生成一个防抖版本的计数函数，延迟500ms
+        var debounceAdd = debounce(function() {
+            debounceNum++;
+            debounceCount.innerText = debounceNum;
+        }, 500);
+        //节流函数封装 ==========
+        //原理：delay时间内，函数最多只执行一次
+        function throttle(fn, delay) {
+            var flag = true; //开关，true表示可以执行
+            return function() {
+                if (!flag) {
+                    //开关关着，直接返回，不执行
+                    return;
+                }
+                flag = false; //执行前先把开关关上
+                setTimeout(function() {
+                    fn();
+                    flag = true; //时间到了，把开关打开
+                }, delay);
+            }
+        }
+        //生成一个节流版本的计数函数，间隔500ms
+        var throttleAdd = throttle(function() {
+            throttleNum++;
+            throttleCount.innerText = throttleNum;
+        }, 500);
+        //绑定鼠标移动事件
+        normalBox.onmousemove = normalAdd;
+        debounceBox.onmousemove = debounceAdd;
+        throttleBox.onmousemove = throttleAdd;
+    </script>
+</body>
+</html>
