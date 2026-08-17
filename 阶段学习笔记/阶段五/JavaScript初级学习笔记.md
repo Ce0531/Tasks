@@ -334,4 +334,3 @@ ul.addEventListener('click', function(e){
 |`e.stopPropagation()`|阻止事件冒泡|
 |`e.clientX`|鼠标距离视口左侧距离|
 |`e.clientY`|鼠标距离视口顶部距离|
-```
