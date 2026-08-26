@@ -5,7 +5,7 @@ Store and manage all task-related documents and notes
    - 1️⃣阶段一  
      [阶段一内容](阶段学习笔记/阶段一/阶段一内容.md)  
      [GitHub入门学习笔记](阶段学习笔记/阶段一/GitHub学习笔记.md)  
-     [Markdown入门学习笔记](阶段学习笔记/阶段一/Markdown学习笔记.md ) 
+     [Markdown入门学习笔记](阶段学习笔记/阶段一/Markdown学习笔记.md )         
      [问题解决记录1](阶段学习笔记/阶段一/问题解决记录1.md)  
    - 2️⃣阶段二  
      [Git入门学习笔记](阶段学习笔记/阶段二/Git学习笔记.md)  
