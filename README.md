@@ -1,7 +1,7 @@
 # Tasks
 Store and manage all task-related documents and notes   
 ## 目录  
-### 📑学习笔记  
+### 📑学习记录 
    - 1️⃣阶段一  
      [阶段一内容](阶段学习笔记/阶段一/阶段一内容.md)  
      [GitHub入门学习笔记](阶段学习笔记/阶段一/GitHub学习笔记.md)  
