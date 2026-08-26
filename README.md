@@ -29,10 +29,10 @@ Store and manage all task-related documents and notes
      [CSS 3学习笔记](./阶段学习笔记/阶段五/CSS%203学习笔记.md)   
      [JavaScript初级学习笔记](./阶段学习笔记/阶段五/JavaScript初级学习笔记.md)  
      [JavaScript进阶学习笔记](./阶段学习笔记/阶段五/JavaScript进阶.md)  
-     [Flex布局demo](./阶段学习笔记/阶段五/Flex布局demo.html)  
-     [Grid布局demo](./阶段学习笔记/阶段五/Grid布局demo.html)
-     [仅用js网页](./阶段学习笔记/阶段五/仅用js.html)  
-     [防抖和节流demo](./阶段学习笔记/阶段五/防抖和节流demo.html)   
+     [Flex布局demo](https://ce0531.github.io/Tasks/阶段学习笔记/阶段五/Flex布局demo.html)  
+     [Grid布局demo](https://ce0531.github.io/Tasks/阶段学习笔记/阶段五/Grid布局demo.html)  
+     [仅用js网页](https://ce0531.github.io/Tasks/阶段学习笔记/阶段五/仅用js.html)  
+     [防抖和节流demo](https://ce0531.github.io/Tasks/阶段学习笔记/阶段五/防抖和节流demo.html)   
    - 6️⃣阶段六  
      [计算机基础与Web底层学习笔记](./阶段学习笔记/阶段六/计算机基础与Web底层学习笔记.md)  
    - 7️⃣阶段七  
